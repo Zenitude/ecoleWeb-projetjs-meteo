@@ -1,0 +1,180 @@
+/* Éléments globaux */
+
+    *, ::before, ::after
+    {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    html
+    {
+        font-size: 62.5%;
+    }
+
+    body
+    {
+        background: linear-gradient(225deg,rgb(15, 8, 8), rgb(94, 93, 93));
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        height: 100vh;
+        display: grid;
+        justify-items: center;
+        align-items: center;
+    }
+
+    .container
+    {
+        background: linear-gradient(45deg, rgb(221, 101, 236), rgb(221, 128, 144));
+        width: 560px;
+        height: 480px;
+        border: 1px solid rgba(255,255,255,0.5); 
+        display: grid;
+        grid-template-rows: 80px 1fr repeat(2, 80px);
+        grid-template-columns: repeat(7, 80px);
+        overflow: hidden;
+    }
+
+/* En-tête */
+
+    header
+    {
+        grid-area: 1 / 1 / 2 / 8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid rgba(255,255,255,0.5);
+    }
+
+    h1
+    {
+        font-weight: normal;
+    }
+
+/* Infos du jour */
+
+    /* Global */
+
+        main
+        {
+            border-bottom: 1px solid rgba(255,255,255,0.5);
+            grid-area: 2 / 1 / 3 / 8;
+            justify-items: center;
+            display: flex;
+        }
+
+    /* Logo météo */
+
+        .meteo-logo
+        {
+            width: 50%;
+            position: relative;
+        }
+
+        .logo-meteo
+        {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%;
+            z-index: 900;
+        }
+
+    /* Infos météos */
+
+        .meteo-infos
+        {
+            width: 50%;
+            font-size: 2.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .ciel::first-letter, .region::first-letter
+        {
+            text-transform: capitalize;
+        }
+
+        .temperature
+        {
+            font-size: 4rem;
+        }
+
+/* Infos des jours suivants*/
+
+    /* Global */
+
+    footer
+    {
+        grid-area: 3 / 1 / 5 / 8;
+    }
+
+    .case
+    {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        width: 80px;
+        height: 80px;
+        border-right: 1px solid rgba(255,255,255,0.5);   
+        font-size: 1.3rem;
+    }
+
+    /* Lignes */
+    .heures
+    {
+        display: flex;
+        border-bottom: 1px solid rgba(255,255,255,0.5);
+    }
+
+    .jours
+    {
+        display: flex;
+    }
+
+    .jour:first-letter
+    {
+        text-transform: capitalize;
+    }
+
+/* Icône chargement */
+    .icone-chargement
+    {
+        position: absolute;
+        width: 560px;
+        height: 480px;
+        background: linear-gradient(225deg,rgb(15, 8, 8), rgb(94, 93, 93));
+        transition: opacity 2s ease-out;
+        z-index: 1000;
+        border: 2px solid whitesmoke;
+    }
+
+    .logo-chargement
+    {
+        width: 150px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+    }
+
+    .disparition
+    {
+        opacity: 0;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
